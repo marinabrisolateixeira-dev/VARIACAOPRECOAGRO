@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroCusto - Comparador de Insumos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Agro<span>Custo</span></h1>
+            <p>Painel de Variação de Preços de Insumos Agrícolas</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="form-section">
+            <h2>Simulação de Custos por Cooperativa</h2>
+            <p>Insira os dados da sua lavoura para comparar os preços de sementes e defensivos.</p>
+            
+            <form id="agroForm">
+                <div class="form-group">
+                    <label for="area">Área de Plantio (em Hectares):</label>
+                    <input type="number" id="area" min="1" placeholder="Ex: 50" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="produto">Selecione o Insumo:</label>
+                    <select id="produto" required>
+                        <option value="" disabled selected>Escolha um produto...</option>
+                        <option value="semente_soja">Sementes de Soja (Saca)</option>
+                        <option value="semente_milho">Sementes de Milho (Saca)</option>
+                        <option value="defensivo_glifosato">Defensivo - Glifosato (Litro)</option>
+                        <option value="defensivo_fungicida">Defensivo - Fungicida (Litro)</option>
+                    </select>
+                </div>
+
+                <button type="submit">Comparar Preços</button>
+            </form>
+        </section>
+
+        <section class="chart-section id="chartSection" style="display: none;">
+            <h2>Comparativo de Investimento Total</h2>
+            <p id="chartDescription"></p>
+            <div class="canvas-container">
+                <canvas id="pricesChart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 AgroCusto - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
